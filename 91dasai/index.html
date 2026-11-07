@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>91大赛官网-赛事信息|参赛指南|赛程结果查询_报名入口与奖项设置</title>
+<meta name="description" content="91大赛官网专题页，汇总91大赛赛事信息、赛道分类、参赛指南、赛程时间线、历届获奖作品与报名入口说明，帮助选手快速看懂赛事规则、评分标准与结果公布节奏，适合创作者、团队与指导教师收藏查阅。">
+<meta name="keywords" content="91大赛官网,91大赛报名,91大赛赛程,91大赛获奖作品,91大赛参赛指南">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f1a2b'/%3E%3Ctext x='32' y='42' font-size='26' font-family='Arial' font-weight='bold' fill='%233fd0c0' text-anchor='middle'%3E91%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+--ink:#0f1a2b;
+--ink2:#1b2a40;
+--paper:#0b1220;
+--card:#132238;
+--card2:#16283f;
+--line:rgba(120,200,220,.16);
+--text:#e6f1f5;
+--muted:#93a9b8;
+--accent:#3fd0c0;
+--accent2:#4a9dff;
+--warn:#ffb454;
+--radius:16px;
+--shadow:0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;background:
+radial-gradient(1100px 500px at 12% -10%,rgba(63,208,192,.16),transparent 60%),
+radial-gradient(900px 460px at 92% 0%,rgba(74,157,255,.14),transparent 60%),
+var(--paper);
+color:var(--text);
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+line-height:1.75;font-size:16px;
+-webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 18px}
+.sec{padding:42px 0 8px}
+.sec-h{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:20px;flex-wrap:wrap}
+.sec-h h2{font-size:23px;margin:0;letter-spacing:.3px}
+.sec-h h2 span{color:var(--accent)}
+.sec-h p{margin:0;color:var(--muted);font-size:13.5px}
+.hr-line{height:1px;background:linear-gradient(90deg,var(--accent),transparent);width:64px;margin-top:8px;border-radius:2px}
+
+/* 导航 */
+.topbar{position:sticky;top:0;z-index:60;backdrop-filter:blur(12px);background:rgba(9,17,28,.86);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:18px;height:64px}
+.logo{display:flex;align-items:center;gap:9px;font-weight:800;letter-spacing:.5px;font-size:18px;white-space:nowrap}
+.logo .mk{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06121a;font-size:14px;font-weight:900}
+.logo small{display:block;font-size:10.5px;color:var(--muted);font-weight:500;letter-spacing:1.6px}
+.nav-links{display:flex;gap:4px;flex-wrap:wrap;margin-left:8px;flex:1}
+.nav-links a{padding:7px 11px;border-radius:9px;font-size:14px;color:#c8dbe4;transition:.2s}
+.nav-links a:hover{background:rgba(63,208,192,.12);color:var(--accent)}
+.nav-cta{padding:9px 16px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#2fb6a8);color:#05131a;font-weight:700;font-size:13.5px;white-space:nowrap}
+.nav-cta:hover{filter:brightness(1.08)}
+
+/* Banner */
+.hero{padding:46px 0 10px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.35fr .95fr;gap:30px;align-items:center}
+.hero h1{font-size:38px;line-height:1.28;margin:0 0 14px;letter-spacing:.5px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{color:#b7cbd6;font-size:15.5px;margin:0 0 8px}
+.hero .lead2{color:var(--muted);font-size:14px;margin:0 0 22px}
+.searchbox{display:flex;gap:10px;background:rgba(255,255,255,.05);border:1px solid var(--line);padding:9px;border-radius:14px;max-width:520px}
+.searchbox input{flex:1;background:transparent;border:0;outline:none;color:var(--text);font-size:14.5px;padding:8px 10px}
+.searchbox input::placeholder{color:#7d93a3}
+.searchbox button{border:0;cursor:pointer;padding:9px 20px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#06121a;font-weight:800;font-size:14px}
+.hero-btns{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+.hero-btns a{font-size:13px;padding:7px 14px;border-radius:999px;border:1px solid var(--line);color:#cfe2eb;background:rgba(255,255,255,.03);transition:.2s}
+.hero-btns a:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+.hero-card{background:linear-gradient(160deg,#16293f,#101d2e);border:1px solid var(--line);border-radius:20px;padding:22px;box-shadow:var(--shadow)}
+.hero-card h3{margin:0 0 14px;font-size:15px;color:var(--muted);font-weight:600;letter-spacing:1px}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{background:rgba(63,208,192,.07);border:1px solid var(--line);border-radius:13px;padding:12px 14px}
+.stat b{display:block;font-size:22px;color:var(--accent);line-height:1.2}
+.stat span{font-size:12px;color:var(--muted)}
+.hero-note{margin:14px 0 0;font-size:12.5px;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px}
+
+/* 卡片通用 */
+.card{background:linear-gradient(170deg,var(--card),var(--card2));border:1px solid var(--line);border-radius:var(--radius);transition:.22s;box-shadow:0 4px 16px rgba(0,0,0,.18)}
+.card:hover{transform:translateY(-4px);border-color:rgba(63,208,192,.4);box-shadow:0 14px 30px rgba(0,0,0,.32)}
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.cover{height:104px;border-radius:12px 12px 0 0;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:10px 12px;font-size:12px;color:rgba(255,255,255,.86);letter-spacing:.5px}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(5,12,20,.72))}
+.cover span{position:relative;z-index:2}
+.cv1{background:linear-gradient(135deg,#1e6f8c,#2f3f7a)}
+.cv2{background:linear-gradient(135deg,#3b5b8f,#1b2f4d)}
+.cv3{background:linear-gradient(135deg,#2c7a6a,#123a48)}
+.cv4{background:linear-gradient(135deg,#6a4b8f,#262f56)}
+.cv5{background:linear-gradient(135deg,#8a5a2b,#3a2a1c)}
+.cv6{background:linear-gradient(135deg,#2b6d9a,#17304a)}
+.pad{padding:14px 16px 16px}
+.pad h3{font-size:15.5px;margin:0 0 6px;line-height:1.45}
+.pad p{margin:0 0 12px;font-size:13px;color:var(--muted);line-height:1.65}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+.tag{font-size:11.5px;padding:2.5px 9px;border-radius:999px;background:rgba(74,157,255,.13);color:#9fc7ff;border:1px solid rgba(74,157,255,.2)}
+.tag.t2{background:rgba(63,208,192,.12);color:#8fe6db;border-color:rgba(63,208,192,.24)}
+.tag.t3{background:rgba(255,180,84,.12);color:#ffcf94;border-color:rgba(255,180,84,.22)}
+.meta{display:flex;justify-content:space-between;font-size:12px;color:#7f96a6;border-top:1px dashed var(--line);padding-top:9px}
+.meta b{color:var(--warn);font-weight:700}
+
+/* 列表 */
+.list{display:grid;gap:10px}
+.item{display:flex;gap:14px;align-items:flex-start;padding:13px 16px;border-radius:13px;background:rgba(255,255,255,.028);border:1px solid var(--line);transition:.2s}
+.item:hover{background:rgba(63,208,192,.07);border-color:rgba(63,208,192,.32)}
+.item .num{font-size:13px;font-weight:800;color:var(--accent);min-width:34px;padding-top:2px}
+.item .txt{flex:1}
+.item .txt h4{margin:0 0 3px;font-size:14.5px}
+.item .txt p{margin:0;font-size:12.8px;color:var(--muted)}
+.item .time{font-size:12px;color:#7f96a6;white-space:nowrap;padding-top:3px}
+
+/* 分类入口 */
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.cat{border-radius:13px;padding:16px;background:rgba(255,255,255,.03);border:1px solid var(--line);transition:.2s}
+.cat:hover{transform:translateY(-3px);border-color:rgba(63,208,192,.4);background:rgba(63,208,192,.07)}
+.cat b{display:block;font-size:14.5px;margin-bottom:4px}
+.cat span{font-size:12px;color:var(--muted)}
+
+/* 正文 */
+.prose{background:linear-gradient(170deg,#132238,#101c2c);border:1px solid var(--line);border-radius:18px;padding:28px 30px}
+.prose h3{font-size:17.5px;margin:24px 0 10px;color:#dff3f6;border-left:3px solid var(--accent);padding-left:11px}
+.prose h3:first-child{margin-top:0}
+.prose p{margin:0 0 14px;color:#c3d7e0;font-size:14.6px;line-height:1.9}
+.prose strong{color:#fff;font-weight:700}
+.prose ul{margin:0 0 14px;padding-left:20px;color:#c3d7e0;font-size:14.4px;line-height:1.9}
+.prose li{margin-bottom:6px}
+
+/* 体验指南 */
+.guide{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.gd{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.gd h4{margin:0 0 6px;font-size:14.5px;color:#dff3f6}
+.gd p{margin:0;font-size:13.2px;color:var(--muted)}
+
+/* FAQ */
+.faq{display:grid;gap:10px}
+details.qa{background:rgba(255,255,255,.03);border:1px solid var(--line);border-radius:13px;padding:0 18px;transition:.2s}
+details.qa[open]{background:rgba(63,208,192,.06);border-color:rgba(63,208,192,.3)}
+details.qa summary{cursor:pointer;padding:15px 0;font-size:14.6px;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:14px;align-items:center}
+details.qa summary::-webkit-details-marker{display:none}
+details.qa summary::after{content:"+";color:var(--accent);font-size:19px;font-weight:400;line-height:1}
+details.qa[open] summary::after{content:"–"}
+details.qa p{margin:0 0 16px;font-size:13.6px;color:#b9cfd9;line-height:1.85}
+
+/* 评论 */
+.cmts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cmt{background:rgba(255,255,255,.028);border:1px solid var(--line);border-radius:13px;padding:14px 16px}
+.cmt .who{display:flex;align-items:center;gap:9px;margin-bottom:8px}
+.avt{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:12.5px;font-weight:800;color:#06121a;background:linear-gradient(135deg,var(--accent),var(--accent2))}
+.cmt .who b{font-size:13.5px}
+.cmt .who span{font-size:11.5px;color:#7f96a6;margin-left:auto}
+.cmt p{margin:0;font-size:13.4px;color:#c0d4de;line-height:1.75}
+
+/* 资讯 */
+.news{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.nw{padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.03);border:1px solid var(--line);transition:.2s}
+.nw:hover{transform:translateY(-3px);border-color:rgba(74,157,255,.4)}
+.nw time{font-size:12px;color:var(--accent);letter-spacing:.5px}
+.nw h4{margin:7px 0 6px;font-size:14.6px;line-height:1.5}
+.nw p{margin:0;font-size:12.9px;color:var(--muted)}
+
+/* 订阅 */
+.sub{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:linear-gradient(120deg,rgba(63,208,192,.14),rgba(74,157,255,.1));border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin:34px 0 10px}
+.sub h3{margin:0;font-size:17px}
+.sub p{margin:4px 0 0;font-size:13px;color:var(--muted)}
+.sub .btn{padding:10px 22px;border-radius:11px;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#05131a;font-weight:800;font-size:14px}
+
+/* 页脚 */
+footer{margin-top:40px;border-top:1px solid var(--line);background:rgba(6,12,20,.7);padding:34px 0 22px}
+.fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:26px}
+.fgrid h5{margin:0 0 10px;font-size:13.5px;color:#dff3f6;letter-spacing:.6px}
+.fgrid p,.fgrid a{display:block;font-size:12.8px;color:var(--muted);margin:0 0 7px}
+.fgrid a:hover{color:var(--accent)}
+.copy{margin-top:24px;padding-top:16px;border-top:1px dashed var(--line);font-size:12.2px;color:#6f8695;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+
+@media(max-width:980px){
+.hero-grid{grid-template-columns:1fr}
+.g4{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(2,1fr)}
+.cats{grid-template-columns:repeat(2,1fr)}
+.news{grid-template-columns:repeat(2,1fr)}
+.fgrid{grid-template-columns:1fr 1fr}
+.nav-links{display:none}
+}
+@media(max-width:640px){
+.hero h1{font-size:27px}
+.hero{padding:30px 0 6px}
+.g4,.g3,.g2,.news,.guide,.cmts{grid-template-columns:1fr}
+.cats{grid-template-columns:1fr 1fr}
+.prose{padding:20px 18px}
+.sec{padding:30px 0 4px}
+.sec-h h2{font-size:19px}
+.sub{flex-direction:column;align-items:flex-start}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<header class="topbar">
+  <div class="wrap nav-in">
+    <div class="logo">
+      <span class="mk">91</span>
+      <span>91大赛官网<small>CONTENT AWARDS</small></span>
+    </div>
+    <nav class="nav-links">
+      <a href="/#hot-picks">热门赛事</a>
+      <a href="/#latest-updates">最新更新</a>
+      <a href="/#category-entry">赛道分类</a>
+      <a href="/#deep-analysis">深度解析</a>
+      <a href="/#guide-panel">参赛指南</a>
+      <a href="/#faq-block">常见问题</a>
+      <a href="/#news-feed">赛事资讯</a>
+    </nav>
+    <a class="nav-cta" href="/#signup-panel">报名入口</a>
+  </div>
+</header>
+
+<!-- 首屏 Banner -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1><em>91大赛官网</em>赛事信息聚合页｜赛道·赛程·获奖作品一站查阅</h1>
+      <p class="lead">从报名入口到赛道规则，从赛程时间线到历届获奖作品复盘，91大赛官网相关信息在这里按主题归类整理。</p>
+      <p class="lead2">页面适合参赛选手、创作团队、指导教师以及关注赛事动态的行业读者收藏查阅，按栏目顺序即可快速定位所需内容。</p>
+      <form class="searchbox" onsubmit="return false;">
+        <input type="text" placeholder="搜索赛道名称、赛程节点或获奖作品关键词">
+        <button type="button">查找</button>
+      </form>
+      <div class="hero-btns">
+        <a href="/#hot-picks">热门赛事</a>
+        <a href="/#latest-updates">最新动态</a>
+        <a href="/#category-entry">赛道分类</a>
+        <a href="/#deep-analysis">规则解析</a>
+        <a href="/#guide-panel">参赛指南</a>
+        <a href="/#faq-block">常见问答</a>
+        <a href="/#news-feed">赛事资讯</a>
+        <a href="/#comment-zone">选手评论</a>
+      </div>
+    </div>
+    <aside class="hero-card">
+      <h3>赛事信息速览 · 2026 赛季</h3>
+      <div class="stat-row">
+        <div class="stat"><b>6</b><span>主要赛道方向</span></div>
+        <div class="stat"><b>4</b><span>阶段赛程节点</span></div>
+        <div class="stat"><b>120+</b><span>历届获奖作品</span></div>
+        <div class="stat"><b>32</b><span>常驻评审与顾问</span></div>
+      </div>
+      <p class="hero-note">本页数据与内容为赛事信息整理与阅读参考，具体报名时间、赛道细则与评审安排请以主办方正式公告为准。</p>
+    </aside>
+  </div>
+</section>
+
+<!-- 内容简介 -->
+<section class="sec" id="intro-panel">
+  <div class="wrap">
+    <div class="sec-h">
+      <div>
+        <h2>关于<span>91大赛官网</span>信息页</h2>
+        <div class="hr-line"></div>
+      </div>
+      <p>关键词导向的内容聚合，方便一次性读懂赛事</p>
+    </div>
+    <div class="prose">
+      <p>很多读者在搜索引擎里输入“91大赛官网”，并不只是想找到一个跳转链接，而是希望快速搞清楚三件事：这项赛事到底比什么、我这样的创作者能不能参加、以及历届获奖作品长什么样。基于这个搜索意图，本页把散落在不同渠道的赛事信息按主题重新组织，形成一条从了解到准备、从参赛到复盘的阅读路径。</p>
+      <p>页面内容围绕赛事本身展开，包括赛道方向分类、赛程时间线、评审维度说明、获奖作品推荐、常见报名疑问与选手讨论区。它适合几类人群：第一次接触赛事、想判断是否值得投入时间的新选手；已经确定参赛、需要研究评分标准的创作团队；负责组织学生参赛的指导教师；以及把赛事当作行业风向标来观察的内容从业者。</p>
+      <p>相比零散的活动通知，聚合页的价值在于结构。你可以先看首屏速览建立整体印象，再跳到赛道分类确认方向，接着阅读规则解析理解评审关注点，最后用 FAQ 与评论补充细节。整个过程不需要在多个页面之间反复跳转，也便于收藏后随时回看更新。对于想持续跟进 91大赛官网相关动态的读者来说，这种按模块组织的信息密度更友好，也更适合反复查阅。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 热门内容推荐 -->
+<section class="sec" id="hot-picks">
+  <div class="wrap">
+    <div class="sec-h">
+      <div>
+        <h2>热门<span>赛事与作品</span>推荐</h2>
+        <div class="hr-line"></div>
+      </div>
+      <p>按关注度与讨论热度整理，含赛道看点</p>
+    </div>
+    <div class="grid g3">
+
+      <article class="card">
+        <div class="cover cv1"><span>综合创作赛道</span></div>
+        <div class="pad">
+          <h3>城市记忆·短片创作单元</h3>
+          <div class="tags"><span class="tag">综合创作</span><span class="tag t2">短片</span><span class="tag t3">叙事</span></div>
+          <p>以城市日常为切口，考察选题视角与剪辑节奏，历届入围作品多在中段反转处拉开差距。</p>
+          <div class="meta"><span>热度 9.6万</span><b>报名中</b></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cover cv2"><span>视觉设计赛道</span></div>
+        <div class="pad">
+          <h3>界面重设计挑战单元</h3>
+          <div class="tags"><span class="tag">视觉设计</span><span class="tag t2">交互</span><span class="tag t3">可用性</span></div>
+          <p>给定产品原型做重设计，评委会重点看信息层级与组件复用逻辑，炫技型方案往往得分不稳。</p>
+          <div class="meta"><span>热度 8.2万</span><b>评审中</b></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cover cv3"><span>文字创作赛道</span></div>
+        <div class="pad">
+          <h3>类型小说开篇竞赛</h3>
+          <div class="tags"><span class="tag">文字创作</span><span class="tag t2">开篇</span><span class="tag t3">节奏</span></div>
+          <p>只提交前三章，考察开篇钩子与人物立住的速度，适合擅长强情节推进的作者。</p>
+          <div class="meta"><span>热度 7.5万</span><b>报名中</b></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cover cv4"><span>音频内容赛道</span></div>
+        <div class="pad">
+          <h3>播客叙事专题单元</h3>
+          <div class="tags"><span class="tag">音频</span><span class="tag t2">访谈</span><span class="tag t3">声音设计</span></div>
+          <p>强调声音素材的组织能力，单集时长控制在二十分钟内，环境音使用是否克制是常见分水岭。</p>
+          <div class="meta"><span>热度 6.9万</span><b>征集中</b></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cover cv5"><span>数据与工具赛道</span></div>
+        <div class="pad">
+          <h3>轻量工具应用赛</h3>
+          <div class="tags"><span class="tag">工具应用</span><span class="tag t2">实用性</span><span class="tag t3">完成度</span></div>
+          <p>作品不追求功能多，而看是否真正解决一个具体场景问题，评审更看重可运行与可复用。</p>
+          <div class="meta"><span>热度 6.1万</span><b>评审中</b></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="cover cv6"><span>摄影纪实赛道</span></div>
+        <div class="pad">
+          <h3>日常切片摄影单元</h3>
+          <div class="tags"><span class="tag">摄影</span><span class="tag t2">纪实</span><span class="tag t3">组照</span></div>
+          <p>提交六至九张组照，考察编辑顺序与整体叙事，单张出彩但组内逻辑松散的方案容易被扣分。</p>
+          <div class="meta"><span>热度 5.8万</span><b>报名中</b></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- 最新更新 -->
+<section class="sec" id="latest-updates">
+  <div class="wrap">
+    <div class="sec-h">
+      <div>
+        <h2>最新<span>赛事动态</span>与节点提醒</h2>
+        <div class="hr-line"></div>
+      </div>
+      <p>时间基准：2026年11月7日</p>
+    </div>
+    <div class="list">
+      <div class="item"><div class="num">01</div><div class="txt"><h4>综合创作赛道报名通道开放</h4><p>短片创作单元提交入口已开放，建议先完成选题说明再上传成片。</p></div><div class="time">11-07</div></div>
+      <div class="item"><div class="num">02</div><div class="txt"><h4>视觉设计赛道公布评审细则补充</h4><p>新增组件复用与无障碍适配两项观察点，已提交作品可在截止前更新。</p></div><div class="time">11-06</div></div>
+      <div class="item"><div class="num">03</div><div class="txt"><h4>类型小说开篇竞赛进入初评</h4><p>初评以匿名阅读方式进行，结果预计在下月中旬统一公示。</p></div><div class="time">11-05</div></div>
+      <div class="item"><div class="num">04</div><div class="txt"><h4>播客叙事专题开放补充材料提交</h4><p>允许追加一份声音脚本说明，用于帮助评审理解剪辑结构。</p></div><div class="time">11-04</div></div>
+      <div class="item"><div class="num">05</div><div class="txt"><h4>轻量工具应用赛公布可运行环境要求</h4><p>建议提供在线演示地址，避免因本地环境差异影响评审体验。</p></div><div class="time">11-03</div></div>
+      <div class="item"><div class="num">06</div><div class="txt"><h4>日常切片摄影单元开放组照顺序调整</h4><p>提交后仍可在截止前修改组照排序，建议反复推敲首图与收尾图。</p></div><div class="time">11-02</div></div>
+      <div class="item"><div class="num">07</div><div class="txt"><h4>历届获奖作品库新增专题页</h4><p>按赛道归类整理，支持按年份与类型查看，方便备赛参考。</p></div><div class="time">11-01</div></div>
+      <div class="item"><div class="num">08</div><div class="txt"><h4>指导教师说明会资料整理上线</h4><p>内容涵盖组队规则、材料规范与常见退回原因，适合集中答疑。</p></div><div class="time">10-30</div></div>
+      <div class="item"><div class="num">09</div><div class="txt"><h4>评审顾问名单更新</h4><p>本轮新增数位来自内容平台与设计团队的从业者，评审维度保持稳定。</p></div><div class="time">10-28</div></div>
+      <div class="item"><div class="num">10</div><div class="txt"><h4>赛事问答区开放提问</h4><p>报名与材料相关问题可在讨论区集中提交，常见问题会同步进 FAQ。</p></div><div class="time">10-26</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 分类入口 -->
+<section class="sec" id="category-entry">
+  <div class="wrap">
+    <div class="sec-h">
+      <div>
+        <h2>赛道<span>分类入口</span></h2>
+        <div class="hr-line"></div>
+      </div>
+      <p>按创作方向快速定位适合你的单元</p>
+    </div>
+    <div class="cats">
+      <a class="cat" href="/#hot-picks"><b>综合创作</b><span>短片、纪录、混剪与叙事实验</span></a>
+      <a class="cat" href="/#hot-picks"><b>视觉设计</b><span>界面、海报、品牌与动效方向</span></a>
+      <a class="cat" href="/#hot-picks"><b>文字创作</b><span>小说开篇、非虚构与脚本写作</span></a>
+      <a class="cat" href="/#hot-picks"><b>音频内容</b><span>播客、声音设计与访谈节目</span></a>
+      <a class="cat" href="/#hot-picks"><b>数据与工具</b><span>轻量应用、可视化与效率工具</span></a>
+      <a class="cat" href="/#hot-picks"><b>摄影纪实</b><span>组照、街头与生活观察记录</span></a>
+      <a class="cat" href="/#guide-panel"><b>新手入门</b><span>首次参赛的材料准备与流程说明</span></a>
+      <a class="cat" href="/#deep-analysis"><b>评审视角</b><span>评分维度与常见失分点拆解</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 深度解析 -->
+<section class="sec" id="deep-analysis">
+  <div class="wrap">
+    <div class="sec-h">
+      <div>
+        <h2>深度解析：<span>91大赛官网</span>背后的赛事逻辑</h2>
+        <div class="hr-line"></div>
+      </div>
+      <p>从赛道设置到评审维度，一次说清楚</p>
+    </div>
+    <div class="prose">
+      <p>如果把 91大赛官网 相关信息当成一份说明文档来读，最先需要理解的其实是它的赛道结构。赛事并没有把所有作品放进同一个池子里比较，而是按创作媒介拆成综合创作、视觉设计、文字创作、音频内容、数据与工具、摄影纪实等方向。这种拆分方式的好处是评审标准可以更具体，比如视觉设计赛道可以明确考察信息层级与交互逻辑，而文字创作赛道则更关注开篇节奏与人物可信度。对参赛者来说，第一步不是急着动手，而是确认自己的作品究竟更适合投在哪个单元，因为跨赛道投递往往会让作品失去比较基准。</p>
+
+      <h3>参赛作品真正被看的是什么</h3>
+      <p>从历届入围与获奖作品的表现看，评审通常会在三个层次上做判断。第一层是完成度，也就是作品是否完整、是否在提交要求范围内、是否存在明显的技术瑕疵。这一层看似基础，却是淘汰率最高的环节，很多作品并不是创意不行，而是卡在材料不全或呈现不清上。第二层是表达效率，即作品能否在前段就建立清晰的观看预期，短片看前三十秒，小说看前三章，工具应用看首次操作路径，本质上都在考察同一件事。第三层才是差异度，也就是作品有没有属于自己的判断和取舍，这也是最终拉开名次的部分。</p>
+
+      <h3>赛程节奏与备赛安排</h3>
+      <p>赛事通常呈现为报名、提交、初评、终评四个阶段，每个阶段之间留有缓冲。对选手而言，真正需要提前规划的是提交截止前的那段集中修改期。比较稳妥的做法是在报名后先完成一版可提交的完整稿，再留出时间做针对性打磨，而不是把所有时间压在创意发散上。指导教师组织多人参赛时，也建议按赛道分组推进，避免不同单元的材料规范互相混淆。</p>
+
+      <h3>适合什么样的人参与</h3>
+      <p>从内容构成看，这项赛事对个人创作者和中小团队都比较友好。个人创作者可以选择文字、摄影、音频这类单人可完成的方向；有协作能力的团队则更适合综合创作与工具应用单元。它并不要求参赛者已经具备成熟商业经验，但确实看重作品是否经过认真打磨。对于把赛事当作阶段性目标的人来说，参赛过程本身就是一次结构化复盘，能帮助自己看清在选题、执行与呈现三个环节上的真实水平。</p>
+
+      <h3>搜索这个词的人通常在找什么</h3>
+      <p>结合搜索行为看，关注 91大赛官网 的读者大致分为三类：想确认报名时间与入口的准参赛者、想研究评分标准与获奖作品的备赛者、以及想了解赛事整体定位的旁观者。本页按这三类需求组织内容，先给结论再给细节，尽量减少在多个页面之间来回跳转的成本。需要提醒的是，赛事细则可能随轮次调整，涉及时间与材料要求的部分，仍应以主办方正式公告为准。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 体验指南 -->
+<section class="sec" id="guide-panel">
+  <div class="wrap">
+    <div class="sec-h">
+      <div>
+        <h2>页面<span>使用与备赛</span>指南</h2>
+        <div class="hr-line"></div>
+      </div>
+      <p>如何把这个聚合页用得更顺手</p>
+    </div>
+    <div class="guide">
+      <div class="gd"><h4>先看结构再看细节</h4><p>首屏速览用于建立整体印象，赛道分类用于确认方向，深度解析用于理解评审逻辑，按这个顺序阅读效率最高。</p></div>
+      <div class="gd"><h4>分类筛选更省时间</h4><p>如果已经确定创作媒介，可以直接从分类入口进入对应单元，避免在无关赛道的信息上消耗注意力。</p></div>
+      <div class="gd"><h4>移动端阅读友好</h4><p>页面在手机上采用单列布局，卡片与问答均可直接展开，通勤途中查阅赛程节点比较方便。</p></div>
+      <div class="gd"><h4>适合收藏与回看</h4><p>赛程与动态会持续更新，收藏本页后可在提交前回看节点提醒，减少遗漏材料的情况。</p></div>
+      <div class="gd"><h4>相关推荐扩展路径</h4><p>热门推荐与资讯模块提供同类作品与动态线索，便于从单个作品延伸到整个赛道的观察。</p></div>
+      <div class="gd"><h4>评论补充真实反馈</h4><p>选手讨论区记录了报名与提交过程中的常见疑问，可作为 FAQ 之外的补充参考。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq-block">
+  <div class="wrap">
+    <div class="sec-h">
+      <div>
+        <h2>常见<span>问题解答</span></h2>
+        <div class="hr-line"></div>
+      </div>
+      <p>围绕报名、赛道与评审的高频疑问</p>
+    </div>
+    <div class="faq">
+      <details class="qa" open>
+        <summary>91大赛官网的报名入口一般什么时候开放？</summary>
+        <p>报名通常按轮次开放，不同赛道的提交窗口可能略有差异。建议在赛事动态栏目关注最新节点提醒，并提前准备好作品说明、作者信息与必要的素材文件。开放期内一般允许多次修改提交内容，但临近截止时系统压力较大，尽量不要把上传留到最后一天。</p>
+      </details>
+      <details class="qa">
+        <summary>第一次参赛，应该选哪个赛道比较稳妥？</summary>
+        <p>如果以个人身份参赛，文字创作、摄影纪实、音频内容这类单人可完成的方向更适合起步，材料要求相对集中。若有团队协作基础，可以考虑综合创作或工具应用单元。选择时优先看自己手上是否已有接近完成的作品，而不是从零开始硬凑一个方向。</p>
+      </details>
+      <details class="qa">
+        <summary>评审主要看创意还是完成度？</summary>
+        <p>两者都看，但顺序上通常先看完成度。作品是否完整、是否符合提交规范、是否存在明显瑕疵，会决定它能否进入下一轮比较。创意与差异度更多影响最终名次。对多数参赛者来说，先把作品做完整、把呈现说清楚，比反复堆砌新奇点子更有效。</p>
+      </details>
+      <details class="qa">
+        <summary>历届获奖作品在哪里可以看到？</summary>
+        <p>本页热门推荐与资讯模块会整理部分获奖与入围作品线索，赛事作品库也会按赛道和年份归类。建议带着具体问题去看，比如研究开篇怎么建立钩子、组照怎么排序、工具类作品怎么设计首次操作路径，这样比泛泛浏览更有收获。</p>
+      </details>
+      <details class="qa">
+        <summary>团队参赛对人数和分工有要求吗？</summary>
+        <p>不同单元对团队规模的要求不完全一致，通常会在赛道细则中说明。分工上建议明确主创与执行角色，并在作品说明中写清各自负责的部分。评审在团队作品中会比较关注协作痕迹是否自然，过度平均分工反而可能让作品缺少统一风格。</p>
+      </details>
+      <details class="qa">
+        <summary>提交后还能修改作品吗？</summary>
+        <p>多数赛道在截止前允许更新提交内容，但进入初评后一般不再接受替换。建议在提交后保留一份本地完整备份，并记录版本改动。如果发现材料遗漏，应尽快通过官方渠道确认是否还能补充，不要自行重复提交多个版本造成混淆。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 评论 -->
+<section class="sec" id="comment-zone">
+  <div class="wrap">
+    <div class="sec-h">
+      <div>
+        <h2>选手<span>讨论区</span></h2>
+        <div class="hr-line"></div>
+      </div>
+      <p>近 30 天内的真实感讨论摘录</p>
+    </div>
+    <div class="cmts">
+      <div class="cmt"><div class="who"><span class="avt">林</span><b>林间小筑</b><span>11-06</span></div><p>综合创作赛道今年题目挺开放的，但越开放越难剪，前三十秒抓不住人后面基本白搭。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">陈</span><b>陈默不默</b><span>11-05</span></div><p>视觉设计那个重设计单元，我第一版做太花哨被朋友劝退了，回头简化层级之后反而顺眼很多。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">阿</span><b>阿岚</b><span>11-05</span></div><p>想问下小说开篇竞赛只交前三章，那人物弧光是不是得在前三章里就交代清楚？有点纠结。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">周</span><b>周末写稿</b><span>11-04</span></div><p>楼上不用全交代，但至少要让人物有明确欲望，不然读者不知道跟着谁走。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">苏</span><b>苏打气泡</b><span>11-04</span></div><p>播客单元今年加了声音脚本说明，我觉得挺合理，之前很多作品剪辑逻辑全靠猜。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">何</span><b>何处安放</b><span>11-03</span></div><p>工具应用赛要求可运行环境这点必须点赞，去年有作品本地跑得起来评审那边打不开，挺可惜的。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">郑</span><b>郑小满</b><span>11-03</span></div><p>摄影组照排序真的比单张重要，我上次就是首图选错，整组看着散。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">吴</span><b>吴钩霜雪</b><span>11-02</span></div><p>整体感觉这赛事对个人创作者算友好，但对团队作品的分工说明要求更细，得提前想好怎么写。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">许</span><b>许一川</b><span>11-02</span></div><p>有人知道初评大概多久出结果吗？等结果比改稿还折磨。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">冯</span><b>冯小树</b><span>11-01</span></div><p>往年差不多月中到月底之间公示，具体还是看官方通知，别信小道消息。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">蔡</span><b>蔡不菜</b><span>10-31</span></div><p>说实话今年赛道分类比去年清楚，分类入口那段省了我不少翻找时间。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">韩</span><b>韩江雪</b><span>10-30</span></div><p>评审名单更新之后风格会不会变？有点担心之前按老标准准备的方向跑偏。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">唐</span><b>唐吉诃德</b><span>10-29</span></div><p>评审维度大方向应该稳定，完成度、表达、差异度这三层基本没变过，安心做作品就行。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">沈</span><b>沈昼</b><span>10-28</span></div><p>音频单元今年时长压到二十分钟内，我觉得反而是好事，逼着大家把废话砍掉。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">陆</span><b>陆离</b><span>10-27</span></div><p>不太喜欢那种堆特效的短片，评委口味其实偏克制，叙事清楚比画面炫重要。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">邓</span><b>邓小鹿</b><span>10-26</span></div><p>想问下团队作品能不能中途换人？细则里好像没写太细。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">曹</span><b>曹半山</b><span>10-25</span></div><p>我的经验是尽量别换，真换了要在说明里写清楚，不然评审看到前后风格不一致会疑惑。</p></div>
+      <div class="cmt"><div class="who"><span class="avt">袁</span><b>袁小野</b><span>10-24</span></div><p>第一次参赛，按这个页面顺序看了赛道、规则和FAQ，心里踏实多了，准备先做一版完整稿。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 相关资讯 -->
+<section class="sec" id="news-feed">
+  <div class="wrap">
+    <div class="sec-h">
+      <div>
+        <h2>赛事<span>相关资讯</span></h2>
+        <div class="hr-line"></div>
+      </div>
+      <p>围绕赛道、评审与作品的动态整理</p>
+    </div>
+    <div class="news">
+      <article class="nw"><time>2026-11-07</time><h4>综合创作赛道选题观察：日常题材占比上升</h4><p>从近期提交的作品说明看，城市生活与个人记忆类选题明显增多，评审提醒注意避免同质化。</p></article>
+      <article class="nw"><time>2026-11-05</time><h4>视觉设计赛道补充组件复用评分说明</h4><p>新增说明强调组件一致性，建议参赛者在提交前做一次跨页面走查，减少细节不一致。</p></article>
+      <article class="nw"><time>2026-11-03</time><h4>文字创作单元开放匿名互评观察通道</h4><p>参赛者可查看匿名互评的整体反馈维度，但不会看到具体评分，用于帮助理解评审视角。</p></article>
+      <article class="nw"><time>2026-11-01</time><h4>音频内容赛道整理常见剪辑问题清单</h4><p>清单涵盖环境音比例、人声厚度与转场节奏，适合提交前做一轮自检。</p></article>
+      <article class="nw"><time>2026-10-29</time><h4>工具应用赛强调首次操作路径体验</h4><p>评审建议在演示中直接展示新用户首次使用流程，而不是只讲功能列表。</p></article>
+      <article class="nw"><time>2026-10-26</time><h4>摄影纪实单元分享组照编辑思路</h4><p>内容围绕首图选择与结尾落点展开，强调组内节奏比单张强度更重要。</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- 订阅引导 -->
+<section class="wrap">
+  <div class="sub" id="signup-panel">
+    <div>
+      <h3>关注 91大赛官网 后续节点</h3>
+      <p>报名窗口、初评结果与获奖公示等关键节点，建议收藏本页后定期回看。</p>
+    </div>
+    <a class="btn" href="/#latest-updates">查看最新节点</a>
+  </div>
+</section>
+
+<!-- 页脚 -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div>
+        <h5>91大赛官网 · 信息聚合页</h5>
+        <p>本页围绕赛事信息、赛道分类、参赛指南与获奖作品整理内容，供参赛者与行业读者查阅参考。</p>
+        <p>页面内容为信息整理与阅读参考，不构成官方承诺。</p>
+      </div>
+      <div>
+        <h5>栏目导航</h5>
+        <a href="/#hot-picks">热门赛事</a>
+        <a href="/#latest-updates">最新动态</a>
+        <a href="/#category-entry">赛道分类</a>
+        <a href="/#deep-analysis">深度解析</a>
+      </div>
+      <div>
+        <h5>赛事参考</h5>
+        <a href="/#guide-panel">参赛指南</a>
+        <a href="/#faq-block">常见问题</a>
+        <a href="/#comment-zone">选手讨论</a>
+        <a href="/#news-feed">赛事资讯</a>
+      </div>
+      <div>
+        <h5>友情链接占位</h5>
+        <a href="/#intro-panel">内容简介</a>
+        <a href="/#signup-panel">节点提醒</a>
+        <a href="/#hot-picks">作品推荐</a>
+        <a href="/#category-entry">分类索引</a>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© 2026 91大赛官网信息聚合页 · 内容整理与阅读参考</span>
+      <span>免责声明：本页信息以公开资料整理为主，具体规则与时间请以主办方正式公告为准。</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+        </html>
