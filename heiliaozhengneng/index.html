@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>黑料正能量-娱乐爆料与正能量解析_明星幕后真实故事与口碑追踪</title>
+  <meta name="description" content="黑料正能量专题聚合最新娱乐爆料、明星幕后故事与正能量事件解析。涵盖热点追踪、口碑榜单、深度人物分析与社区讨论，帮你快速了解娱乐事件全貌，发现真实温暖的正能量瞬间。">
+  <meta name="keywords" content="黑料正能量,娱乐爆料,明星幕后,正能量事件,口碑追踪,娱乐资讯">
+  <style>
+    /* ===== 全局变量与重置 ===== */
+    :root {
+      --bg-dark: #0b0d15;
+      --bg-card: #141824;
+      --bg-card-hover: #1c2030;
+      --border-dim: #2a2f42;
+      --accent-neon: #00f0ff;
+      --accent-pink: #ff36b0;
+      --accent-glow: 0 0 12px rgba(0, 240, 255, 0.4);
+      --text-main: #eaeef7;
+      --text-sub: #9aa3bb;
+      --text-dim: #5e6680;
+      --radius-md: 16px;
+      --radius-sm: 10px;
+      --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.7);
+      --font-base: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      --max-width: 1200px;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      font-family: var(--font-base);
+      line-height: 1.6;
+      padding: 0 16px;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+    /* ===== 通用组件 ===== */
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 28px;
+      background: linear-gradient(180deg, var(--accent-neon), var(--accent-pink));
+      border-radius: 4px;
+      box-shadow: var(--accent-glow);
+    }
+    .card-base {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-dim);
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+    .card-base:hover {
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
+      border-color: rgba(0, 240, 255, 0.3);
+    }
+    .tag {
+      display: inline-block;
+      background: rgba(0, 240, 255, 0.08);
+      color: var(--accent-neon);
+      font-size: 0.7rem;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+      border: 1px solid rgba(0, 240, 255, 0.2);
+    }
+    .tag-pink {
+      background: rgba(255, 54, 176, 0.1);
+      color: var(--accent-pink);
+      border-color: rgba(255, 54, 176, 0.25);
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-neon), #0088ff);
+      border: none;
+      color: #0b0d15;
+      font-weight: 700;
+      padding: 10px 24px;
+      border-radius: 40px;
+      cursor: default;
+      font-size: 0.9rem;
+      display: inline-block;
+      box-shadow: 0 0 18px rgba(0, 240, 255, 0.25);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--border-dim);
+      color: var(--text-main);
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+    .btn-outline:hover {
+      border-color: var(--accent-neon);
+      color: var(--accent-neon);
+    }
+    /* ===== 头部导航 ===== */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border-dim);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      font-size: 1.5rem;
+      letter-spacing: -0.5px;
+    }
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      background: linear-gradient(135deg, var(--accent-neon), var(--accent-pink));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: #0b0d15;
+      font-weight: 900;
+      box-shadow: 0 0 18px rgba(0, 240, 255, 0.6);
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 0.95rem;
+      color: var(--text-sub);
+      flex-wrap: wrap;
+    }
+    .nav-links a:hover {
+      color: var(--accent-neon);
+    }
+    .search-mini {
+      background: #1a1e2b;
+      border: 1px solid var(--border-dim);
+      border-radius: 40px;
+      padding: 8px 18px;
+      color: var(--text-sub);
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    /* ===== Banner ===== */
+    .hero {
+      margin: 32px 0 40px;
+      padding: 40px 32px;
+      background: radial-gradient(circle at 20% 30%, rgba(0, 240, 255, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 70%, rgba(255, 54, 176, 0.08) 0%, transparent 50%),
+                  #10131f;
+      border-radius: 32px;
+      border: 1px solid var(--border-dim);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      background: linear-gradient(to right, #ffffff, #b0c4ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .hero p {
+      color: var(--text-sub);
+      max-width: 680px;
+      font-size: 1.1rem;
+      margin-bottom: 28px;
+    }
+    .hero-search {
+      display: flex;
+      background: #1c2030;
+      border-radius: 60px;
+      padding: 6px 6px 6px 24px;
+      max-width: 520px;
+      border: 1px solid var(--border-dim);
+      margin-bottom: 28px;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .hero-search span {
+      color: var(--text-dim);
+      font-size: 0.95rem;
+    }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    /* ===== 卡片网格 ===== */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 22px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 22px;
+    }
+    .card-content {
+      padding: 20px;
+    }
+    .card-title {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .card-desc {
+      color: var(--text-sub);
+      font-size: 0.9rem;
+      margin: 10px 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      color: var(--text-dim);
+      font-size: 0.75rem;
+      margin-top: 12px;
+      border-top: 1px solid var(--border-dim);
+      padding-top: 10px;
+    }
+    /* ===== 列表条目 ===== */
+    .list-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border-dim);
+      font-size: 0.95rem;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .list-item:last-child {
+      border-bottom: none;
+    }
+    .list-item .name {
+      font-weight: 600;
+    }
+    .list-item .time {
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+    /* ===== FAQ ===== */
+    .faq-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border: 1px solid var(--border-dim);
+    }
+    .faq-q {
+      font-weight: 700;
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: var(--accent-neon);
+    }
+    .faq-a {
+      color: var(--text-sub);
+      font-size: 0.92rem;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border-dim);
+    }
+    .faq-a:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+    /* ===== 评论 ===== */
+    .comment-item {
+      background: var(--bg-card);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+      margin-bottom: 12px;
+      border: 1px solid var(--border-dim);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2a2f42, #3e445e);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--accent-neon);
+    }
+    .comment-body {
+      flex: 1;
+    }
+    .comment-user {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .comment-name {
+      font-weight: 600;
+      font-size: 0.92rem;
+    }
+    .comment-date {
+      color: var(--text-dim);
+      font-size: 0.72rem;
+    }
+    .comment-text {
+      color: var(--text-sub);
+      font-size: 0.9rem;
+    }
+    /* ===== 页脚 ===== */
+    .footer {
+      margin-top: 60px;
+      padding: 40px 0 24px;
+      border-top: 1px solid var(--border-dim);
+      color: var(--text-dim);
+      font-size: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    /* ===== 响应式 ===== */
+    @media (max-width: 700px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .hero {
+        padding: 28px 20px;
+      }
+      .section-title {
+        font-size: 1.3rem;
+      }
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        gap: 16px;
+        font-size: 0.85rem;
+      }
+    }
+    @media (max-width: 480px) {
+      .grid-3, .grid-2 {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230b0d15'/%3E%3Ctext x='50' y='68' font-size='52' font-weight='bold' text-anchor='middle' fill='%2300f0ff'%3E黑%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <div class="container">
+    <!-- ========== 导航 ========== -->
+    <header class="navbar">
+      <div class="logo">
+        <span class="logo-icon">黑</span>
+        <span>黑料正能量</span>
+      </div>
+      <nav class="nav-links">
+        <a href="/#hot">热门爆料</a>
+        <a href="/#latest">最新动态</a>
+        <a href="/#analysis">深度解析</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">社区评论</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+      <div class="search-mini">
+        <span>🔍</span> 搜索黑料正能量
+      </div>
+    </header>
+
+    <!-- ========== 首屏 Banner ========== -->
+    <section class="hero">
+      <h1>黑料正能量 · 娱乐爆料与真实温暖</h1>
+      <p>聚焦娱乐圈幕后故事与正能量事件，提供最新爆料追踪、口碑解析与深度人物观察。每天更新热门话题，帮你理性吃瓜，发现争议背后的温暖瞬间。</p>
+      <div class="hero-search">
+        <span>搜索明星、事件或关键词...</span>
+        <span class="btn-primary">立即探索</span>
+      </div>
+      <div class="hero-buttons">
+        <span class="btn-outline">🔥 热门爆料</span>
+        <span class="btn-outline">📅 最新更新</span>
+        <span class="btn-outline">📊 口碑榜单</span>
+        <span class="btn-outline">💬 社区讨论</span>
+        <span class="btn-outline">✨ 正能量</span>
+        <span class="btn-outline">🎬 幕后故事</span>
+        <span class="btn-outline">📰 资讯速递</span>
+      </div>
+    </section>
+
+    <!-- ========== 内容简介 ========== -->
+    <section id="intro" style="margin-bottom: 48px;">
+      <h2 class="section-title">关于黑料正能量</h2>
+      <div style="background: var(--bg-card); border-radius: var(--radius-md); padding: 28px; border: 1px solid var(--border-dim); color: var(--text-sub); font-size: 0.98rem; line-height: 1.8;">
+        <p style="margin-bottom: 16px;">「黑料正能量」专题聚合娱乐领域的热点爆料与正向解析，不仅追踪争议事件，更关注明星幕后真实故事、公益行动与行业暖闻。我们希望通过理性梳理，让你在信息洪流中看到事件全貌，感受娱乐生态中真实存在的正能量。</p>
+        <p style="margin-bottom: 16px;">页面覆盖最新爆料更新、深度人物分析、口碑榜单、社区讨论与FAQ答疑，适合关注娱乐动态、喜欢深度吃瓜、希望了解事件背景的读者。无论你是想快速浏览今日热点，还是挖掘某位艺人的真实故事，这里都能提供清晰的信息入口和延伸阅读路径。</p>
+        <p>内容每日更新，分类清晰，支持移动端阅读。收藏本页，随时获取黑料正能量最新动态，不错过每一个值得关注的温暖瞬间。</p>
+      </div>
+    </section>
+
+    <!-- ========== 热门推荐 ========== -->
+    <section id="hot" style="margin-bottom: 48px;">
+      <h2 class="section-title">热门爆料 · 今日焦点</h2>
+      <div class="grid-3">
+        <div class="card-base card-content">
+          <div class="card-title">某顶流私下公益行曝光 <span class="tag">正能量</span></div>
+          <p class="card-desc">连续三年匿名资助山区小学，被路人偶遇后低调回应“只是小事”，引发网友热议。</p>
+          <div class="card-meta"><span>🔥 2.3w 讨论</span><span>2小时前</span></div>
+        </div>
+        <div class="card-base card-content">
+          <div class="card-title">剧组冲突视频反转 <span class="tag tag-pink">爆料</span></div>
+          <p class="card-desc">现场完整视频流出，真相并非网传“耍大牌”，工作人员发声还原经过。</p>
+          <div class="card-meta"><span>🔥 1.8w 讨论</span><span>4小时前</span></div>
+        </div>
+        <div class="card-base card-content">
+          <div class="card-title">老戏骨片场暖心举动 <span class="tag">幕后</span></div>
+          <p class="card-desc">为群演争取休息时间、自费加餐，多位合作演员发文感谢，口碑持续走高。</p>
+          <div class="card-meta"><span>🔥 1.2w 讨论</span><span>6小时前</span></div>
+        </div>
+        <div class="card-base card-content">
+          <div class="card-title">选秀选手退赛内幕 <span class="tag tag-pink">争议</span></div>
+          <p class="card-desc">知情人透露退赛与合约无关，实为身体原因，粉丝后援会已确认并送上祝福。</p>
+          <div class="card-meta"><span>🔥 9500 讨论</span><span>8小时前</span></div>
+        </div>
+        <div class="card-base card-content">
+          <div class="card-title">偶像团体捐款明细公开 <span class="tag">公益</span></div>
+          <p class="card-desc">官方公示善款流向，每一笔支出清晰可查，网友点赞“这才是正能量偶像”。</p>
+          <div class="card-meta"><span>🔥 8700 讨论</span><span>12小时前</span></div>
+        </div>
+        <div class="card-base card-content">
+          <div class="card-title">综艺剪辑争议后续 <span class="tag">口碑</span></div>
+          <p class="card-desc">节目组放出未播花絮，嘉宾互动自然，恶意剪辑传闻不攻自破。</p>
+          <div class="card-meta"><span>🔥 7400 讨论</span><span>1天前</span></div>
+        </div>
+        <div class="card-base card-content">
+          <div class="card-title">歌手演唱会临时改曲 <span class="tag">暖心</span></div>
+          <p class="card-desc">为满足患病粉丝心愿，临时加唱冷门曲目，现场观众齐声合唱场面感人。</p>
+          <div class="card-meta"><span>🔥 6200 讨论</span><span>1天前</span></div>
+        </div>
+        <div class="card-base card-content">
+          <div class="card-title">演员片场受伤坚持拍摄 <span class="tag">敬业</span></div>
+          <p class="card-desc">脚踝扭伤后简单处理便返回镜头前，导演发文称赞其专业态度。</p>
+          <div class="card-meta"><span>🔥 5100 讨论</span><span>2天前</span></div>
+        </div>
+        <div class="card-base card-content">
+          <div class="card-title">网红助农直播数据造假？ <span class="tag tag-pink">质疑</span></div>
+          <p class="card-desc">网友质疑销量注水，团队晒出物流单据回应，当地农户发声感谢。</p>
+          <div class="card-meta"><span>🔥 4300 讨论</span><span>2天前</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 最新更新 ========== -->
+    <section id="latest" style="margin-bottom: 48px;">
+      <h2 class="section-title">最新更新 · 实时动态</h2>
+      <div style="background: var(--bg-card); border-radius: var(--radius-md); padding: 18px 24px; border: 1px solid var(--border-dim);">
+        <div class="list-item"><span class="name">「某综艺未播片段」公开</span><span class="time">10分钟前</span></div>
+        <div class="list-item"><span class="name">「新生代演员」片场路透曝光</span><span class="time">35分钟前</span></div>
+        <div class="list-item"><span class="name">「音乐人」发文回应抄袭争议</span><span class="time">1小时前</span></div>
+        <div class="list-item"><span class="name">「剧组」发布声明澄清不实传言</span><span class="time">2小时前</span></div>
+        <div class="list-item"><span class="name">「公益项目」善款明细公示</span><span class="time">3小时前</span></div>
+        <div class="list-item"><span class="name">「热播剧」收视率再创新高</span><span class="time">4小时前</span></div>
+        <div class="list-item"><span class="name">「导演」新片选角传闻辟谣</span><span class="time">5小时前</span></div>
+        <div class="list-item"><span class="name">「偶像」机场暖心帮助粉丝</span><span class="time">6小时前</span></div>
+        <div class="list-item"><span class="name">「颁奖礼」提名名单公布</span><span class="time">8小时前</span></div>
+        <div class="list-item"><span class="name">「老艺术家」捐赠珍藏手稿</span><span class="time">10小时前</span></div>
+        <div class="list-item"><span class="name">「综艺」下期预告引发期待</span><span class="time">12小时前</span></div>
+        <div class="list-item"><span class="name">「电影」路演现场感人互动</span><span class="time">14小时前</span></div>
+      </div>
+    </section>
+
+    <!-- ========== 分类入口 ========== -->
+    <section id="categories" style="margin-bottom: 48px;">
+      <h2 class="section-title">分类导航 · 快速定位</h2>
+      <div class="grid-3" style="grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));">
+        <span class="btn-outline" style="text-align: center; padding: 14px 0;">🔥 热点爆料</span>
+        <span class="btn-outline" style="text-align: center; padding: 14px 0;">🎬 影视幕后</span>
+        <span class="btn-outline" style="text-align: center; padding: 14px 0;">🎵 音乐动态</span>
+        <span class="btn-outline" style="text-align: center; padding: 14px 0;">🌟 偶像追踪</span>
+        <span class="btn-outline" style="text-align: center; padding: 14px 0;">💪 公益正能量</span>
+        <span class="btn-outline" style="text-align: center; padding: 14px 0;">📺 综艺花絮</span>
+        <span class="btn-outline" style="text-align: center; padding: 14px 0;">🎭 人物专访</span>
+        <span class="btn-outline" style="text-align: center; padding: 14px 0;">📸 现场路透</span>
+      </div>
+    </section>
+
+    <!-- ========== 深度解析 ========== -->
+    <section id="analysis" style="margin-bottom: 48px;">
+      <h2 class="section-title">深度解析 · 黑料背后的正能量</h2>
+      <div style="background: var(--bg-card); border-radius: var(--radius-md); padding: 32px; border: 1px solid var(--border-dim); color: var(--text-sub); font-size: 0.98rem; line-height: 1.85;">
+        <p style="margin-bottom: 18px;">娱乐圈的“黑料”往往伴随着争议与误解，而“正能量”则藏在事件背后的真实细节里。本专题深度解析近期热门爆料背后的完整故事，从多方信源还原事件脉络，帮你分辨哪些是刻意炒作，哪些是真实温暖。我们关注艺人面对争议时的态度、幕后工作人员的真实反馈，以及那些被忽略的善意举动。</p>
+        <p style="margin-bottom: 18px;">例如近期某演员被曝片场“黑脸”，完整视频显示其正因高温下连续拍摄身体不适，但仍坚持完成工作，并在休息时主动为群演递水。类似案例揭示出碎片化信息容易造成误读，而深度梳理才能看见真相。黑料正能量不只关注爆料本身，更关注事件中的人性闪光点。</p>
+        <p style="margin-bottom: 18px;">在内容选择上，我们坚持多角度呈现：既有对争议事件的理性分析，也有对公益行动、敬业故事、暖心互动的持续追踪。分类涵盖影视、音乐、综艺、偶像等领域，每一条都经过编辑筛选，避免纯情绪化输出。适合希望在娱乐信息中获得真实价值、不想被标题党裹挟的读者。</p>
+        <p>如果你也在关注娱乐事件的完整面貌，不妨收藏本页，通过分类导航和最新更新模块快速定位感兴趣的内容。我们每日更新，保持对热点事件的敏感度，同时挖掘那些容易被忽略的正能量细节，让每一次浏览都更有收获。</p>
+      </div>
+    </section>
+
+    <!-- ========== 体验指南 ========== -->
+    <section id="guide" style="margin-bottom: 48px;">
+      <h2 class="section-title">阅读指南 · 如何高效浏览</h2>
+      <div class="grid-2">
+        <div class="card-base card-content">
+          <div class="card-title">📌 按分类筛选</div>
+          <p class="card-desc">通过上方分类入口快速跳转至对应领域，影视、音乐、公益等独立呈现，减少信息干扰。</p>
+        </div>
+        <div class="card-base card-content">
+          <div class="card-title">📱 移动端友好</div>
+          <p class="card-desc">页面自适应手机屏幕，卡片和列表自动调整，通勤路上也能轻松阅读最新爆料。</p>
+        </div>
+        <div class="card-base card-content">
+          <div class="card-title">🔔 追更提醒</div>
+          <p class="card-desc">关注最新更新模块，重要事件进展会实时更新，不错过关键反转。</p>
+        </div>
+        <div class="card-base card-content">
+          <div class="card-title">💬 参与讨论</div>
+          <p class="card-desc">在评论区查看其他用户的观点，多元视角帮你更全面理解事件。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section id="faq" style="margin-bottom: 48px;">
+      <h2 class="section-title">常见问题 · 快速答疑</h2>
+      <div class="grid-2">
+        <div class="faq-card">
+          <div class="faq-q">Q：黑料正能量主要关注什么内容？</div>
+          <div class="faq-a">A：本专题聚焦娱乐领域的争议事件与正能量故事，包括明星幕后、公益行动、片场花絮、口碑反转等。我们通过多方信息梳理，帮助读者看到事件全貌，发现争议中的温暖细节。</div>
+          <div class="faq-q">Q：页面内容多久更新一次？</div>
+          <div class="faq-a">A：热门爆料和最新动态实时更新，深度解析与FAQ会根据事件进展及时补充。建议收藏本页并关注“最新更新”模块，获取第一手动态。</div>
+          <div class="faq-q">Q：如何判断爆料是否真实？</div>
+          <div class="faq-a">A：我们优先采用官方声明、当事人回应及多方交叉信源。对于未经证实的传言，会标注“争议”或“质疑”标签，建议读者理性看待，避免片面解读。</div>
+        </div>
+        <div class="faq-card">
+          <div class="faq-q">Q：可以推荐类似的正能量内容吗？</div>
+          <div class="faq-a">A：可以在分类导航中选择“公益正能量”或“暖心故事”标签，也可查看页面底部的相关资讯推荐，我们会持续挖掘娱乐圈的正面案例。</div>
+          <div class="faq-q">Q：怎样参与评论？</div>
+          <div class="faq-a">A：直接在本页评论区留下你的观点即可，无需登录。我们鼓励理性讨论，拒绝人身攻击。优质评论会在页面中展示。</div>
+          <div class="faq-q">Q：为什么叫“黑料正能量”？</div>
+          <div class="faq-a">A：这个名字寓意在娱乐“黑料”中寻找正向价值，不盲目跟风，而是通过深度解析还原事件背后的真实人性，传递积极视角。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 用户评论 ========== -->
+    <section id="comments" style="margin-bottom: 48px;">
+      <h2 class="section-title">社区评论 · 大家都在聊</h2>
+      <div>
+        <div class="comment-item">
+          <div class="avatar">星</div>
+          <div class="comment-body">
+            <div class="comment-user"><span class="comment-name">星空下的猫</span><span class="comment-date">2026-11-05</span></div>
+            <div class="comment-text">那个公益行真的挺拉好感的，被拍到了还那么低调，比那些做点好事就买热搜的强多了。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar">吃</div>
+          <div class="comment-body">
+            <div class="comment-user"><span class="comment-name">吃瓜不吐皮</span><span class="comment-date">2026-11-04</span></div>
+            <div class="comment-text">剧组冲突那个反转没想到，果然不能听风就是雨，等完整视频出来再说。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar">路</div>
+          <div class="comment-body">
+            <div class="comment-user"><span class="comment-name">路人甲Observer</span><span class="comment-date">2026-11-04</span></div>
+            <div class="comment-text">老戏骨那个太暖了，现在这种体恤群演的演员不多了，希望多报道这种。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar">音</div>
+          <div class="comment-body">
+            <div class="comment-user"><span class="comment-name">音乐盒子的梦</span><span class="comment-date">2026-11-03</span></div>
+            <div class="comment-text">演唱会改曲那个现场我朋友去了，说真的哭成一片，歌手很真诚。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar">电</div>
+          <div class="comment-body">
+            <div class="comment-user"><span class="comment-name">电影票根收集者</span><span class="comment-date">2026-11-02</span></div>
+            <div class="comment-text">选秀退赛那个，身体原因能理解，但希望节目组能更关注选手健康。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar">小</div>
+          <div class="comment-body">
+            <div class="comment-user"><span class="comment-name">小透明不透明</span><span class="comment-date">2026-11-01</span></div>
+            <div class="comment-text">综艺剪辑那个事，节目组放花絮就是自证清白，以后别乱剪了。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar">追</div>
+          <div class="comment-body">
+            <div class="comment-user"><span class="comment-name">追光者_2026</span><span class="comment-date">2026-10-31</span></div>
+            <div class="comment-text">这个专题整理得挺全的，不用到处搜碎片信息了，收藏了。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar">冷</div>
+          <div class="comment-body">
+            <div class="comment-user"><span class="comment-name">冷静看戏</span><span class="comment-date">2026-10-30</span></div>
+            <div class="comment-text">有些爆料还是得等子弹飞一会儿，上次站错队了，现在学乖了。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar">柠</div>
+          <div class="comment-body">
+            <div class="comment-user"><span class="comment-name">柠檬不酸啊</span><span class="comment-date">2026-10-29</span></div>
+            <div class="comment-text">偶像团体捐款明细公开这个必须赞，透明才能让人放心。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar">棒</div>
+          <div class="comment-body">
+            <div class="comment-user"><span class="comment-name">棒棒糖不甜</span><span class="comment-date">2026-10-28</span></div>
+            <div class="comment-text">演员带伤拍戏虽然敬业，但还是希望剧组注意安全，别硬撑。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar">夜</div>
+          <div class="comment-body">
+            <div class="comment-user"><span class="comment-name">夜航星</span><span class="comment-date">2026-10-27</span></div>
+            <div class="comment-text">助农直播那个，农户都出来说话了，应该不是假的，支持正能量。</div>
+          </div>
+        </div>
+        <div class="comment-item">
+          <div class="avatar">娱</div>
+          <div class="comment-body">
+            <div class="comment-user"><span class="comment-name">娱乐小灵通</span><span class="comment-date">2026-10-26</span></div>
+            <div class="comment-text">希望多出一些深度解析，有些事只看标题真的会误解。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 相关资讯 ========== -->
+    <section id="news" style="margin-bottom: 48px;">
+      <h2 class="section-title">相关资讯 · 延伸阅读</h2>
+      <div class="grid-2">
+        <div class="card-base card-content">
+          <div class="card-title">某演员公益项目获官方表彰</div>
+          <p class="card-desc">因长期资助乡村教育，被当地授予爱心大使称号，工作室回应将坚持做下去。</p>
+          <div class="card-meta"><span>2026-11-06</span><span>阅读 1.2w</span></div>
+        </div>
+        <div class="card-base card-content">
+          <div class="card-title">热播剧幕后花絮：演员互帮互助</div>
+          <p class="card-desc">剧组氛围融洽，主演主动指导新人，导演称赞整个团队像一家人。</p>
+          <div class="card-meta"><span>2026-11-05</span><span>阅读 8900</span></div>
+        </div>
+        <div class="card-base card-content">
+          <div class="card-title">音乐人发起公益义演</div>
+          <p class="card-desc">为听障儿童筹集助听设备，多组艺人零酬劳参与，直播收益全部捐赠。</p>
+          <div class="card-meta"><span>2026-11-05</span><span>阅读 7600</span></div>
+        </div>
+        <div class="card-base card-content">
+          <div class="card-title">综艺节目组公开澄清剪辑争议</div>
+          <p class="card-desc">放出未播片段还原现场，嘉宾互动自然，观众表示理解并期待下期。</p>
+          <div class="card-meta"><span>2026-11-04</span><span>阅读 1.5w</span></div>
+        </div>
+        <div class="card-base card-content">
+          <div class="card-title">老戏骨捐赠珍藏戏服用于慈善拍卖</div>
+          <p class="card-desc">多件经典角色戏服将被拍卖，所得善款用于扶持青年戏剧人才。</p>
+          <div class="card-meta"><span>2026-11-03</span><span>阅读 6200</span></div>
+        </div>
+        <div class="card-base card-content">
+          <div class="card-title">偶像团体粉丝自发组织环保行动</div>
+          <p class="card-desc">响应偶像号召，粉丝在多地开展海滩清洁，传递正能量追星方式。</p>
+          <div class="card-meta"><span>2026-11-02</span><span>阅读 5400</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== 页脚 ========== -->
+    <footer class="footer">
+      <div>
+        <p style="margin-bottom: 8px; font-weight: 600; color: var(--text-main);">黑料正能量 · 发现娱乐真实温度</p>
+        <p>© 2026 黑料正能量内容专题. 本站内容基于公开信息整理，仅供参考。</p>
+        <p style="margin-top: 8px; font-size: 0.75rem; color: var(--text-dim);">免责声明：页面内容不代表任何立场，如涉及侵权请联系删除。</p>
+      </div>
+      <div class="footer-links">
+        <a href="/#hot">热门爆料</a>
+        <a href="/#latest">最新动态</a>
+        <a href="/#analysis">深度解析</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">社区评论</a>
+        <a href="/#news">相关资讯</a>
+      </div>
+    </footer>
+  </div>
+</body>
+              </html>
